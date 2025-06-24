@@ -34,6 +34,7 @@ This repository contains a full demand forecasting solution for a fashion & beau
 ├── assets/
 │   └── true_vs_predicted.png              # Sample visualization
 └── README.md                              # Project overview
+|__ requirements.txt                       # All necessary libraries to download.
 ```
 
 ## 🛠️ Setup & Usage
