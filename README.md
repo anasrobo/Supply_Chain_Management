@@ -2,7 +2,7 @@
 
 > Demand forecasting for a makeup supply chain using a neural network.
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange) ![Streamlit](https://img.shields.io/badge/Streamlit-1.x-green)
 
 ## 🚀 Project Overview
 
@@ -15,58 +15,75 @@ This repository contains a full demand forecasting solution for a fashion & beau
 3. **Training & Validation**
 4. **Evaluation** (MSE + scatter plot)
 5. **Model Export & Inference**
+6. **Interactive Streamlit App**
 
 ## 📁 Repository Structure
 
 ```
 .
 ├── data/
-│   └── supply_chain_data.csv        # Raw dataset
+│   └── supply_chain_data.csv              # Raw dataset
 ├── notebooks/
-│   └── demand_forecasting.ipynb     # Colab-ready notebook
+│   └── demand_forecasting.ipynb           # Colab-ready notebook
 ├── models/
-│   └── demand_forecasting_model.keras  # Trained Keras model
-└── README.md                        # Project overview
+│   ├── demand_forecasting_model.keras     # Trained Keras model
+│   ├── scaler.pkl                          # StandardScaler used in training
+│   └── feature_columns.pkl                 # Feature column order used for prediction
+├── streamlit_app/
+│   └── app.py                              # Streamlit dashboard app
+├── assets/
+│   └── true_vs_predicted.png              # Sample visualization
+└── README.md                              # Project overview
 ```
 
 ## 🛠️ Setup & Usage
 
-1. **Install dependencies:**
+### 1. Install dependencies:
 
-   ```bash
-   pip install pandas numpy matplotlib scikit-learn tensorflow
-   ```
+```bash
+pip install pandas numpy matplotlib scikit-learn tensorflow streamlit joblib
+```
 
-2. **Place your data:**
+### 2. Run the notebook:
 
-   Drop `supply_chain_data.csv` into the `data/` folder. Ensure it includes:
+Open `notebooks/demand_forecasting.ipynb` in Google Colab or Jupyter:
 
-   * Product Type, SKU, Price, Availability
-   * Number of products sold (target)
-   * Revenue generated, Stock levels, Lead times, etc.
+- Upload your dataset (CSV)
+- Clean & preprocess the data
+- Train the neural network model
+- Evaluate results with MSE & plot
+- Save the model, scaler, and feature columns to disk
 
-3. **Open the notebook:**
+### 3. Launch the Streamlit app:
 
-   Launch `notebooks/demand_forecasting.ipynb` in Google Colab or Jupyter:
+From your project root:
 
-   * Run the upload cell to load your CSV
-   * Execute data cleaning, encoding, and feature engineering
-   * Train the neural network model
-   * Evaluate test MSE and view the True vs. Predicted scatter plot
-   * Save the trained model in native `.keras` format
+```bash
+streamlit run streamlit_app/app.py
+```
 
-4. **Review outputs:**
+Upload your CSV to get instant sales predictions and visual feedback!
 
-   * Look for the printed Test MSE in the notebook output
-   * Inspect visualization cells for model performance insights
+## 📊 Streamlit Dashboard Preview
+
+![True vs Predicted Sales](assets/true_vs_predicted.png)
+
+Features:
+- Live file upload
+- Automatic preprocessing (date + categorical)
+- Prediction of "Number of products sold"
+- MSE & R² score display
+- Scatter plot of true vs predicted
+- Option to download prediction CSV (coming soon)
 
 ## 🔄 Next Steps
 
 * 🔧 Perform hyperparameter tuning (e.g., with KerasTuner)
-* 📈 Experiment with advanced models (LSTM, XGBoost)
-* 🚀 Add a Streamlit dashboard for interactive insights (in progress)
+* 📈 Try advanced models like LSTM or XGBoost
+* ✨ Enhance Streamlit with interactive filters, export buttons, etc.
 
 ---
 
 > Built with ❤️ by Anas
+
 
