@@ -22,19 +22,19 @@ This repository contains a full demand forecasting solution for a fashion & beau
 ```
 .
 ├── data/
-│   └── supply_chain_data.csv              # Raw dataset
+│   └── supply_chain_data.csv                           # Raw dataset
 ├── notebooks/
-│   └── demand_forecasting.ipynb           # Colab-ready notebook
+│   └── supply_chain_demand_forecasting.ipynb           # Colab-ready notebook
 ├── models/
-│   ├── demand_forecasting_model.keras     # Trained Keras model
-│   ├── scaler.pkl                          # StandardScaler used in training
-│   └── feature_columns.pkl                 # Feature column order used for prediction
+│   ├── demand_forecasting_model.keras                  # Trained Keras model
+│   ├── scaler.pkl                                      # StandardScaler used in training
+│   └── feature_columns.pkl                             # Feature column order used for prediction
 ├── streamlit_app/
-│   └── app.py                              # Streamlit dashboard app
+│   └── app.py                                          # Streamlit dashboard app
 ├── assets/
-│   └── true_vs_predicted.png              # Sample visualization
-└── README.md                              # Project overview
-|__ requirements.txt                       # All necessary libraries to download.
+│   └── true_vs_predicted.png                           # Sample visualization
+└── README.md                                           # Project overview
+|__ requirements.txt                                    # All necessary libraries to download.
 ```
 
 ## 🛠️ Setup & Usage
