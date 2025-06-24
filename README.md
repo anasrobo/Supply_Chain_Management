@@ -75,7 +75,7 @@ Features:
 - Prediction of "Number of products sold"
 - MSE & R² score display
 - Scatter plot of true vs predicted
-- Option to download prediction CSV (coming soon)
+- Option to download prediction CSV 
 
 ## 🔄 Next Steps
 
